@@ -1,9 +1,9 @@
 <!ELEMENT schedule (days, periods, courses)>
 <!ATTLIST schedule 
-	year (#PCDATA) #REQUIRED
-	term (#PCDATA) #REQUIRED
-	program (#PCDATA) #REQUIRED
-	set (#PCDATA) #REQUIRED
+	year CDATA #REQUIRED
+	term CDATA #REQUIRED
+	program CDATA #REQUIRED
+	set CDATA #REQUIRED
 >
 
 
