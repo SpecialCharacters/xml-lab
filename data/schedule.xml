@@ -62,11 +62,11 @@
 				<room>Sw09-127</room>
 			</booking>
 		</timeslot>
-		<timeslot time="0330">
+		<timeslot time="1530">
 			<booking type="lab">
 				<courseNumber>COMP4560</courseNumber>
 				<weekday>Monday</weekday>
-				<time>0330</time>
+				<time>1530</time>
 				<instructor>Joseph Lo</instructor>
 				<room>SW12-320</room>
 			</booking>
