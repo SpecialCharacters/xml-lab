@@ -1,0 +1,6 @@
+Time					What was done
+
+Mar 12, 03:30pm			XML validated
+Mar 13, 02:30pm			XML created
+Mar 08, 05:41pm			DTD bugfix
+Mar 08, 05:27pm			DTD created
