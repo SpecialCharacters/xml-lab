@@ -1,0 +1,95 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<!DOCTYPE schedule SYSTEM 'schedule.dtd'>
+
+<schedule year="2016" term="Winter" program="CST" set="40">
+	<days>
+		<day daysOfTheWeek="mon">
+			<booking type="lab">
+				<courseNumber>COMP4985</courseNumber>
+				<weekday>Monday</weekday>
+				<time>9:30</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+			<booking type="lecture">
+				<courseNumber>COMP4735</courseNumber>
+				<weekday>Monday</weekday>
+				<time>11:30</time>
+				<instructor>Mirela Gutica</instructor>
+				<room>SW01-1205</room>
+			</booking>
+			<booking type="lab">
+				<courseNumber>BLAW3600</courseNumber>
+				<weekday>Monday</weekday>
+				<time>12:30</time>
+				<instructor>Catherine Ryan</instructor>
+				<room>SE09-127</room>
+			</booking>
+			<booking type="lab">
+				<courseNumber>COMP4560</courseNumber>
+				<weekday>Monday</weekday>
+				<time>3:30</time>
+				<instructor>Joseph Lo</instructor>
+				<room>SE12-320</room>
+			</booking>
+		</day>
+	</days>
+	<period>
+		<timeslot time="9:30">
+			<booking type="lab">
+				<courseNumber>COMP4985</courseNumber>
+				<weekday>Monday</weekday>
+				<time>9:30</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+			<booking type="lab">
+				<courseNumber>COMP4981</courseNumber>
+				<weekday>Tuesday</weekday>
+				<time>9:30</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+			<booking type="lab">
+				<courseNumber>COMP4985</courseNumber>
+				<weekday>Wednesday</weekday>
+				<time>9:30</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+			<booking type="lab">
+				<courseNumber>COMP4981</courseNumber>
+				<weekday>Thursday</weekday>
+				<time>9:30</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+			<booking type="lecture">
+				<courseNumber>BLAW3600</courseNumber>
+				<weekday>Friday</weekday>
+				<time>9:30</time>
+				<instructor>Catherine Ryan</instructor>
+				<room>Sw05-1840</room>
+			</booking>
+		</timeslot>
+	</period>
+	<courses>
+		<course>
+			<booking type="lab">
+				<courseNumber>COMP4985</courseNumber>
+				<weekday>Monday</weekday>
+				<time>9:30</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+			<booking type="lab">
+				<courseNumber>COMP4985</courseNumber>
+				<weekday>Wednesday</weekday>
+				<time>9:30</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+		</course>
+	</courses>
+</schedule>
+	
