@@ -43,32 +43,33 @@
 				<instructor>Aman Abdulla</instructor>
 				<room>SE12-323</room>
 			</booking>
-		</timeslot>
-		<timeslot time="1130">
+			<booking type="lab">
+				<courseNumber>COMP4981</courseNumber>
+				<weekday>Tuesday</weekday>
+				<time>0930</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+			<booking type="lab">
+				<courseNumber>COMP4985</courseNumber>
+				<weekday>Wednesday</weekday>
+				<time>0930</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
+			<booking type="lab">
+				<courseNumber>COMP4981</courseNumber>
+				<weekday>Thursday</weekday>
+				<time>0930</time>
+				<instructor>Aman Abdulla</instructor>
+				<room>SE12-323</room>
+			</booking>
 			<booking type="lecture">
-				<courseNumber>COMP4735</courseNumber>
-				<weekday>Monday</weekday>
-				<time>1130</time>
-				<instructor>Mirela Gutica</instructor>
-				<room>SW01-1205</room>
-			</booking>
-		</timeslot>
-		<timeslot time="1230">
-			<booking type="lab">
 				<courseNumber>BLAW3600</courseNumber>
-				<weekday>Monday</weekday>
-				<time>1230</time>
+				<weekday>Friday</weekday>
+				<time>0930</time>
 				<instructor>Catherine Ryan</instructor>
-				<room>Sw09-127</room>
-			</booking>
-		</timeslot>
-		<timeslot time="1530">
-			<booking type="lab">
-				<courseNumber>COMP4560</courseNumber>
-				<weekday>Monday</weekday>
-				<time>1530</time>
-				<instructor>Joseph Lo</instructor>
-				<room>SW12-320</room>
+				<room>Sw05-1840</room>
 			</booking>
 		</timeslot>
 	</periods>
