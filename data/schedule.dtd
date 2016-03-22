@@ -15,7 +15,7 @@
 
 
 <!ELEMENT periods (timeslot+)>
-<!ELEMENT timeslot (booking)>
+<!ELEMENT timeslot (booking+)>
 <!ATTLIST timeslot
 	time (0830|0930|1030|1130|1230|1330|1430|1530|1630) #REQUIRED
 >
