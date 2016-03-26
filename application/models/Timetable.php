@@ -25,15 +25,15 @@ class Timetable extends CI_Model {
 	}
 	
 	public function getDays() {
-		
+		return $this->days;
 	}
 	
 	public function getPeriods() {
-		
+		return $this->periods;
 	}
 	
 	public function getCourses() {
-		
+		return $this->courses;
 	}
 }
 
