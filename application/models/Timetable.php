@@ -12,15 +12,21 @@ class Timetable extends CI_Model {
 		$this->xml = simplexml_load_file(DATAPATH . 'schedule.xml');
 		
 		foreach($this->xml->days->day as $day) {
-			$this->days[] = new Booking($day);
+			foreach($day->booking as $b){
+                $this->days[] = new Booking($b);
+            }
 		}
 		
 		foreach($this->xml->periods->timeslot as $time) {
-			$this->periods[] = new Booking($time);
+			foreach($time->booking as $b){
+                $this->periods[] = new Booking($b);
+            }
 		}
 		
 		foreach($this->xml->courses->course as $course) {
-			$this->courses[] = new Booking($course);
+			foreach($course->booking as $b){
+                $this->courses[] = new Booking($b);
+            }
 		}
 	}
 	
@@ -47,11 +53,11 @@ class Booking extends CI_Model {
 	
 	public function __construct($b) {
 		$this->type = $b['type'];
-		$this->courseNumber = $b['courseNumber'];
-		$this->weekday = $b['weekday'];
-		$this->time = $b['time'];
-		$this->instructor = $b['instructor'];
-		$this->room = $b['room'];
+		$this->courseNumber = $b->courseNumber;
+		$this->weekday = $b->weekday;
+		$this->time = $b->time;
+		$this->instructor = $b->instructor;
+		$this->room = $b->room;
     }
 	
 }
