@@ -18,7 +18,10 @@ class Welcome extends Application {
 	 * Index Page for this controller.
 	 */
 	public function index()
-	{   $this->data['pagebody'] = '';
+	{
+	    $this->data['pagebody'] = 'homepage';
+	    $this->data['dateAvailable'] = form_dropdown('day',$this->timetable->getDaysDropdown());
+	    $this->data['timeAvailable'] = form_dropdown('time',$this->timetable->getTimeDropdown());
             $this->render();
 	} 
 	
