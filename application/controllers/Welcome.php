@@ -20,6 +20,9 @@ class Welcome extends Application {
 	public function index()
 	{
 	    $this->data['pagebody'] = 'homepage';
+	    $this->data['days']       = $this->timetable->getDays();
+	    $this->data['periods']    = $this->timetable->getPeriods();
+	    $this->data['courses']    = $this->timetable->getCourses();
 	    $this->data['dateAvailable'] = form_dropdown('day',$this->timetable->getDaysDropdown());
 	    $this->data['timeAvailable'] = form_dropdown('time',$this->timetable->getTimeDropdown());
             $this->render();
