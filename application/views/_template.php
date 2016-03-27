@@ -17,15 +17,6 @@
 		    <li class="nav-item active">
 		      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
 		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="#">Courses</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="#">Periods</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" href="#">Days</a>
-		    </li>
 		</ul>
 	    </nav>
 	    
@@ -36,7 +27,6 @@
 		    <input id =searchButton type="submit" name="submit" value="Search" />
 		</form>
 	    </div>
-
 	    <div class="container">
 		<div id="content">
 		    {content}
