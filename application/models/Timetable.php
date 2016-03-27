@@ -49,10 +49,44 @@ class Timetable extends CI_Model {
 	public function getCourses() {
 		return $this->courses;
 	}
+	
+	//Method to search the days facet
+	public function searchDays($day, $time) {
+		$result = array();
+		foreach($this->days as $b){
+            if($b->weekday == $day  && $b->time == $time) {
+               $result[] = $b;
+            }
+        }
+		return $result;
+	}
+	
+	//Method to search the periods facet
+	public function searchPeriods($day, $time) {
+		$result = array();
+		foreach($this->periods as $b){
+            if($b->weekday == $day  && $b->time == $time) {
+               $result[] = $b;
+            }
+        }
+		return $result;
+	}
+	
+	//Method to search the courses facet
+	public function searchCourses($day, $time) {
+		$result = array();
+		foreach($this->courses as $b){
+            if($b->weekday == $day  && $b->time == $time) {
+               $result[] = $b;
+            }
+        }
+		return $result;
+	}
 }
 
 //Booking class
 class Booking extends CI_Model {
+	
 	public $type;
 	public $courseNumber;
 	public $weekday;
