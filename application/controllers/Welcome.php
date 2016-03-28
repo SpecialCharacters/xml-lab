@@ -31,33 +31,47 @@ class Welcome extends Application {
 	} 
 	
 	public function search(){
+	    
+	    $this->data['pagebody'] = 'homepage';
+	    $this->data['days']       = $this->timetable->getDays();
+	    $this->data['periods']    = $this->timetable->getPeriods();
+	    $this->data['courses']    = $this->timetable->getCourses();
+	    $this->data['dateAvailable'] = form_dropdown('day',$this->timetable->getDaysDropdown());
+	    $this->data['timeAvailable'] = form_dropdown('time',$this->timetable->getTimeDropdown());
+	    $this->data['bingo'] = "";
+	    $this->data['results']="";	    
+	    
+	    
 	    $day = $this->input->post('day');
 	    $period = $this->input->post('time');
 	    $checkSame = false;
 	    
-	    $resultsDay = $this->timetable->getBookingsDays($day,$time);
-	    $resultsPeriods = $this->timetable->getBookingsPeriod($day,$time);
-	    $resultsCourse = $this->timetable->getBookingsCourse($day,$time);
+	    $resultsDay = $this->timetable->searchDays($day,$period);
+	    $resultsPeriods = $this->timetable->searchPeriods($day,$period);
+	    $resultsCourse = $this->timetable->searchCourses($day,$period);
 	    
-	    if(count($resultDay) != 1){
-		$this->data['bingo'] = "By the Days facet, search returned ".count($resultDay)." booking";
+	    if(count($resultsDay) != 1){
+		$this->data['bingo'] = "By the Days facet, search returned ".count($resultsDay)." booking";
 	    }else {
 		$checkSame = true;
 	    }
 	    
-	    if(count($resultPeriods) != 1){
-		$this->data['bingo'] = "By the Periods facet, search returned ".count($resultPeriods)." booking";
+	    if(count($resultsPeriods) != 1){
+		$this->data['bingo'] = "By the Periods facet, search returned ".count($resultsPeriods)." booking";
 	    }else{
 		$checkSame = true;
 	    }
 	    
-	    if(count($resultCourse) != 1){
-		$this->data['bingo'] = "By the Course facet, search returned ".count($resultCourse)." booking";
+	    if(count($resultsCourse) != 1){
+		$this->data['bingo'] = "By the Course facet, search returned ".count($resultsCourse)." booking";
 	    }else{
 		$checkSame = true;
 	    }
 	    
-	    
+	    if ($checkSame) {    
+	    }
+
+	$this->render();	    
 	    
 	}
 }
