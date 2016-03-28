@@ -1,25 +1,90 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
+/**
+ * controllers/Welcome.php
+ *
+ * Welcome model
+ *
+ * @author		Dhivya Manohar, Allen Tsang
+ * @copyright           2016-, Special Characters
+ * ------------------------------------------------------------------------
+ */
 
-class Welcome extends CI_Controller {
-
+class Welcome extends Application {
+    public function __construct() { parent::__construct(); }
 	/**
+	 
 	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+	    $this->data['pagebody'] = 'homepage';
+	    $this->data['days']       = $this->timetable->getDays();
+	    $this->data['periods']    = $this->timetable->getPeriods();
+	    $this->data['courses']    = $this->timetable->getCourses();
+	    $this->data['dateAvailable'] = form_dropdown('day',$this->timetable->getDaysDropdown());
+	    $this->data['timeAvailable'] = form_dropdown('time',$this->timetable->getTimeDropdown());
+	    $this->data['bingo'] = "";
+	    $this->data['results']="";
+            $this->render();
+	} 
+	
+	public function search(){
+	    
+	    $this->data['pagebody'] = 'homepage';
+	    $this->data['days']       = $this->timetable->getDays();
+	    $this->data['periods']    = $this->timetable->getPeriods();
+	    $this->data['courses']    = $this->timetable->getCourses();
+	    $this->data['dateAvailable'] = form_dropdown('day',$this->timetable->getDaysDropdown());
+	    $this->data['timeAvailable'] = form_dropdown('time',$this->timetable->getTimeDropdown());
+	    $this->data['bingo'] = "";
+	    $this->data['results']="";	    
+	    
+	    
+	    $day = $this->input->post('day');
+	    $period = $this->input->post('time');
+	    $checkSame = false;
+	    
+	    $resultsDays = $this->timetable->searchDays($day,$period);
+	    $resultsPeriods = $this->timetable->searchPeriods($day,$period);
+	    $resultsCourses = $this->timetable->searchCourses($day,$period);
+	    
+	    if(count($resultsDays) != 1){
+		$this->data['bingo'] = "By the Days facet, search returned ".count($resultsDays)." booking";
+	    }else {
+		$checkSame = true;
+	    }
+	    
+	    if(count($resultsPeriods) != 1){
+		$this->data['bingo'] = "By the Periods facet, search returned ".count($resultsPeriods)." booking";
+	    }else{
+		$checkSame = true;
+	    }
+	    
+	    if(count($resultsCourses) != 1){
+		$this->data['bingo'] = "By the Course facet, search returned ".count($resultsCourses)." booking";
+	    }else{
+		$checkSame = true;
+	    }
+	    
+	    if ($checkSame) {
+		if($resultsDays == $resultsPeriods && $resultsDays == $resultsCourses && $resultsCourses == $resultsPeriods){
+		    $this->data['bingo'] = "Bingo!";
+		    $this->data['results'] = "Day: " . $resultsCourses[0]->weekday.
+					    " Course: ". $resultsCourses[0]->courseNumber.
+					    " Type: ".$resultsCourses[0]->type.
+					    " Time: " .$resultsCourses[0]->time.
+					    " Instructor: ". $resultsCourses[0]->instructor.
+					    " Room: ". $resultsCourses[0]->room;
+			    
+		}
+		else{
+		    $this->data['bingo'] = "Bookings do not match!";
+		}
+	    }
+
+	$this->render();	    
+	    
 	}
 }
