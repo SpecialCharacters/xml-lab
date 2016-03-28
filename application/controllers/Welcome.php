@@ -51,19 +51,11 @@ class Welcome extends Application {
 	    $resultsCourses = $this->timetable->searchCourses($day,$period);
 	    
 	    if(count($resultsDays) != 1){
-		$this->data['bingo'] = "By the Days facet, search returned ".count($resultsDays)." booking";
-	    }else {
-		$checkSame = true;
-	    }
-	    
-	    if(count($resultsPeriods) != 1){
-		$this->data['bingo'] = "By the Periods facet, search returned ".count($resultsPeriods)." booking";
-	    }else{
-		$checkSame = true;
-	    }
-	    
-	    if(count($resultsCourses) != 1){
-		$this->data['bingo'] = "By the Course facet, search returned ".count($resultsCourses)." booking";
+		$this->data['bingo'] = "By the Days facet, search returned ".count($resultsDays)." bookings.";
+	    }else if(count($resultsPeriods) != 1){
+		$this->data['bingo'] = "By the Periods facet, search returned ".count($resultsPeriods)." bookings.";
+	    }else if(count($resultsCourses) != 1){
+		$this->data['bingo'] = "By the Course facet, search returned ".count($resultsCourses)." bookings.";
 	    }else{
 		$checkSame = true;
 	    }
@@ -72,11 +64,11 @@ class Welcome extends Application {
 		if($resultsDays == $resultsPeriods && $resultsDays == $resultsCourses && $resultsCourses == $resultsPeriods){
 		    $this->data['bingo'] = "Bingo!";
 		    $this->data['results'] = "Day: " . $resultsCourses[0]->weekday.
-					    " Course: ". $resultsCourses[0]->courseNumber.
-					    " Type: ".$resultsCourses[0]->type.
-					    " Time: " .$resultsCourses[0]->time.
-					    " Instructor: ". $resultsCourses[0]->instructor.
-					    " Room: ". $resultsCourses[0]->room;
+					    "<br/>Course: ". $resultsCourses[0]->courseNumber.
+					    "<br/>Type: ".$resultsCourses[0]->type.
+					    "<br/>Time: " .$resultsCourses[0]->time.
+					    "<br/>Instructor: ". $resultsCourses[0]->instructor.
+					    "<br/>Room: ". $resultsCourses[0]->room;
 			    
 		}
 		else{

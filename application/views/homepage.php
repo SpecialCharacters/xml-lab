@@ -13,7 +13,7 @@
                 <tr>
                     <th>Day</th>
                     <th>Course</th>
-		    <th>Type</th>
+					<th>Type</th>
                     <th>Time</th>
                     <th>Instructor</th>
 		    <th>Room</th>
@@ -40,7 +40,7 @@
                 <tr>
                     <th>Day</th>
                     <th>Course</th>
-		    <th>Type</th>
+					<th>Type</th>
                     <th>Time</th>
                     <th>Instructor</th>
 		    <th>Room</th>
@@ -67,7 +67,7 @@
                 <tr>
                     <th>Day</th>
                     <th>Course</th>
-		    <th>Weekday</th>
+					<th>Type</th>
                     <th>Time</th>
                     <th>Instructor</th>
 		    <th>Room</th>
