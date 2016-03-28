@@ -1,6 +1,9 @@
 <div id ="results">
     {bingo}
 </div>
+<div>
+    {results}
+</div>
 <div class="row" id="table">
     <div class="col-md-12">
         <h3>Days</h3>
