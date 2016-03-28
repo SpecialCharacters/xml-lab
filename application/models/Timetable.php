@@ -118,12 +118,12 @@ class Booking extends CI_Model {
 	
 	//Booking constructor to fill out fields
 	public function __construct($b) {
-		$this->type = $b['type'];
-		$this->courseNumber = $b->courseNumber;
-		$this->weekday = $b->weekday;
-		$this->time = $b->time;
-		$this->instructor = $b->instructor;
-		$this->room = $b->room;
+		$this->type = (string)$b['type'];
+		$this->courseNumber = (string)$b->courseNumber;
+		$this->weekday = (string)$b->weekday;
+		$this->time = (string)$b->time;
+		$this->instructor = (string)$b->instructor;
+		$this->room = (string)$b->room;
     }
 
 }
