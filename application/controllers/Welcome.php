@@ -51,19 +51,11 @@ class Welcome extends Application {
 	    $resultsCourses = $this->timetable->searchCourses($day,$period);
 	    
 	    if(count($resultsDays) != 1){
-		$this->data['bingo'] = "By the Days facet, search returned ".count($resultsDays)." booking";
-	    }else {
-		$checkSame = true;
-	    }
-	    
-	    if(count($resultsPeriods) != 1){
-		$this->data['bingo'] = "By the Periods facet, search returned ".count($resultsPeriods)." booking";
-	    }else{
-		$checkSame = true;
-	    }
-	    
-	    if(count($resultsCourses) != 1){
-		$this->data['bingo'] = "By the Course facet, search returned ".count($resultsCourses)." booking";
+		$this->data['bingo'] = "By the Days facet, search returned ".count($resultsDays)." bookings";
+	    }else if(count($resultsPeriods) != 1){
+		$this->data['bingo'] = "By the Periods facet, search returned ".count($resultsPeriods)." bookings";
+	    }else if(count($resultsCourses) != 1){
+		$this->data['bingo'] = "By the Course facet, search returned ".count($resultsCourses)." bookings";
 	    }else{
 		$checkSame = true;
 	    }
